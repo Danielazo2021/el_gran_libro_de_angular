@@ -5,7 +5,7 @@ import { LoggerService } from '../logger.service';
 import { LIBROS } from '../mocks';
 import { LibroObservableService } from '../libro-observable.service';
 
-import { Observable } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-libro-lista',
@@ -14,23 +14,23 @@ import { Observable } from 'rxjs';
 })
 export class LibroListaComponent implements OnInit{
 
-  libros:any;
-
+  libros:Libro[];
+ subs$:Subscription;
  
-  constructor( private libroService:LibroService, private loggerService: LoggerService, private observableSubs: LibroObservableService ){
+  constructor( private observableSubs: LibroObservableService ){
 
   }
   
   ngOnInit(): void {
 
-     this.observableSubs.getLibros()
+     this.subs$ =this.observableSubs.getLibros()
          .subscribe(
                     libros=> this.libros = libros,
                     error => console.log(error), 
                       () => console.log("this.LibroObservableService.getLibros() FINALIZADO")
           );
       
-        
+         }
 
   /*
      this.libros= this.libroService.getLibros(); // forma sincronica
@@ -58,8 +58,8 @@ export class LibroListaComponent implements OnInit{
 
               
 
-             // ngOnDestroy(){ 
-            //  if (this.observableSubs)   this.observableSubs.unsubscribe(); 
-          //   }
+              ngOnDestroy(){ 
+              if (this.subs$)   this.subs$.unsubscribe(); 
+             }
             }
-          }
+          
