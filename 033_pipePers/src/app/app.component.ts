@@ -8,6 +8,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = '033_pipePers';
   dividendo=10;
+  //coment
   divisor=2;
   
 }
