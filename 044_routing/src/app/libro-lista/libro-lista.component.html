@@ -1,0 +1,13 @@
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+
+<div c id="libro-detalle">
+<h2>Libros:</h2>
+<ul >
+    <li *ngFor="let libro of libros" > 
+        <a  [routerLink]="['/libros', libro.id]">
+        
+        {{libro.titulo}}</a>
+    </li>
+</ul>
+</div>
