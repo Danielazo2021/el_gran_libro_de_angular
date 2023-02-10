@@ -1,0 +1,28 @@
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+
+
+
+<div class="padre">
+<table border="1">
+  <th colspan="2" style="text-align: center">Padre</th>
+    <tr>
+    <td>Valor1</td>
+    <td><input class="form-control" [(ngModel)]="valor1">  </td>
+  </tr>
+    <tr>
+      <td>Valor2</td>
+      <td><input class="form-control" [(ngModel)]="valor2"> </td>
+    </tr>
+
+    <tr>
+      <td> <b>Resultado </b></td>
+      <td> <b>{{resultadoP}}</b> </td>
+    </tr>
+</table>
+
+
+</div>
+
+<app-compo1 [valor1]="valor1"    [valor2]="valor2"   (envRes)="captaResultado($event)" > </app-compo1>

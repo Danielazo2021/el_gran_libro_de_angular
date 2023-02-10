@@ -1,0 +1,32 @@
+/* You can add global styles to this file, and also import other style files */
+
+div{
+    width: 250px;
+    margin: auto;
+    padding: 20px;
+    display: block;
+    text-align: center;
+}
+
+
+
+
+
+
+
+.padre{
+    background: greenyellow;
+
+}
+
+.hijo{
+    background: grey;
+
+}
+
+.tamB{
+    height: 53px;
+    width: 53px;
+    font-size: 20px;
+}
+
