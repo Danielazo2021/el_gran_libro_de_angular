@@ -1,0 +1,18 @@
+input{
+    text-align: center;
+}
+
+div button{
+    height: 40px;
+    width: auto;
+    font-size: 1.5rem;
+    margin-left: 8%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background: rgb(210, 198, 198);
+}
+
+div{
+    border: 1px solid grey;
+    font-size: 1.5rem;
+}

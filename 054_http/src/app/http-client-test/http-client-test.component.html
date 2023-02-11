@@ -1,0 +1,23 @@
+<hr>
+
+<h5>Peticion: </h5>
+<div class="btn.group" role="group" aria-label="Basic example">   
+    <div>
+    <button tupe="button" class="btn btn-secondary" (click) ="get()"> Get- todos </button>
+       <button tupe="button" class="btn btn-secondary" (click) ="getConId(userId)"> Get por ID del text box </button>
+    <input type="text" [(ngModel)]="userId">Ingrese el UserID
+<br>
+    <button tupe="button" class="btn btn-secondary" (click) ="get_param()"> Get- con  params en el TS</button>
+</div>
+    <button tupe="button" class="btn btn-secondary" (click)="post()"> Post </button>
+    <button tupe="button" class="btn btn-secondary" (click)="put()"> Put </button>
+    <button tupe="button" class="btn btn-secondary" (click)="patch()"> Patch </button>
+    <button tupe="button" class="btn btn-secondary" (click)="delete()"> Delete </button>
+</div>
+<hr>
+
+<h5>Resultado: </h5>
+
+<pre> {{resultadoPeticion | json}} </pre>
+
+
