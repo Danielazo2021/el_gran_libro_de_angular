@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpParams, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import { Post } from '../post';
+import { Observable } from 'rxjs';
+import { forkJoin } from 'rxjs';
 
 
 @Component({
@@ -110,6 +112,15 @@ export class HttpClientTestComponent implements OnInit {
           this.http.delete('https://jsonplaceholder.typicode.com/posts/1')
                 .subscribe(data=> {this.resultadoPeticion= data;});
         }
+
+/*
+        peti_paral(){
+          Observable.forkJoin(
+              this.http.get<Post>('https://jsonplaceholder.typicode.com/posts/4').delay(3000),
+                  this.http.get<Post>('https://jsonplaceholder.typicode.com/posts/5')) 
+            .subscribe( data => { this.resultadoPeticion = data;} );
+            }*/
+
 }
 
 
