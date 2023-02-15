@@ -4,7 +4,6 @@ import { Post } from '../post';
 import { Observable } from 'rxjs';
 import { forkJoin } from 'rxjs';
 
-
 @Component({
   selector: 'app-http-client-test',
   templateUrl: './http-client-test.component.html',
@@ -15,6 +14,7 @@ export class HttpClientTestComponent implements OnInit {
   resultadoPeticion:any="";
   mostrar:boolean=false;
   userId:number=1;
+  a:boolean=true;
 
   constructor( private http: HttpClient){
 
@@ -40,6 +40,20 @@ export class HttpClientTestComponent implements OnInit {
       
 */
         //para recibir la respuesta completa y no solo el body hariamos lo siguiente:
+
+        
+
+        getClientes(): void{  
+        
+
+          this.http.get<any>('https://localhost:7224/api/ListaClientes', 
+              {observe:'response'})
+              .subscribe( data => { this.resultadoPeticion = data.body;
+                          console.log(data);} );
+        }
+
+
+
 
         get(){
           this.http.get<Post[]>('https://jsonplaceholder.typicode.com/posts', 
